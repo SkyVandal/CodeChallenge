@@ -28,6 +28,8 @@ The project expects the dataset to be organized in the BraTS format. Each subjec
 
 ### Model Architecture
 The model is based on the U-Net architecture, which consists of:
+**![Alt text](AIChallenge-Architecture.jpg)**
+where x(i) represents each modality (T1, T1c, T2, Flair), f(i) represents the features generated for each modality, f'(i) represents the new student features after learning from the teacher.
 - **Encoder:** The encoder uses convolutional layers followed by max-pooling to reduce the spatial dimensions and capture feature representations.
 - **Decoder:** The decoder uses upsampling and skip connections to restore the spatial dimensions, aiming to produce a segmentation mask that matches the original input size.
 - **Dilation layers:** Additional dilated convolution layers are used in the bottleneck part of the U-Net, following the implementation in the BraTS 2020 paper.
